@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CO2 Emission Tracker</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="icon" href="assets/favicon.ico">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <img src="assets/logo.png" alt="Logo" class="logo">
+    <nav class="global-nav">
+      <ul>
+        <li><a href="#about">Über uns</a></li>
+        <li><a href="#data">CO2-Daten</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hauptinhalt -->
+  <main>
+    <!-- Lokale Navigation -->
+    <aside class="local-nav">
+      <ul>
+        <li><button id="sort-country">Emissionen nach Ländern sortieren</button></li>
+        <li><button id="sort-company">Emissionen nach Unternehmen sortieren</button></li>
+      </ul>
+    </aside>
+
+    <!-- Inhaltsbereich -->
+    <section id="content">
+      <h1>CO2 Emission Tracker</h1>
+      <p>Diese Webseite bietet Transparenz über die CO2-Emissionen weltweit.</p>
+
+      <!-- Filter-Eingabe -->
+      <label for="filter-input">Filter:</label>
+      <input type="text" id="filter-input" placeholder="Nach Land oder Unternehmen filtern...">
+
+      <!-- Tabelle -->
+      <table id="emissions-table">
+        <thead>
+          <tr>
+            <th>Land</th>
+            <th>Unternehmen</th>
+            <th>CO2-Emissionen (in Mt)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dynamischer Inhalt wird hier eingefügt -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 CO2 Emission Tracker | <a href="#impressum">Impressum</a></p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="scripts/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+/* Basisstyles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f5f5f5; /* Helles Hintergrunddesign */
+  color: #333; /* Standardtextfarbe */
+}
+
+h1, h2, h3 {
+  margin: 0;
+  color: #2C3E50; /* Dunkles Blau */
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #2C3E50;
+  color: white;
+}
+
+.logo {
+  height: 50px; /* Logo-Größe */
+}
+
+.global-nav ul {
+  display: flex;
+  list-style: none; /* Keine Aufzählungspunkte */
+  margin: 0;
+  padding: 0;
+  gap: 1rem; /* Abstand zwischen Links */
+}
+
+.global-nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.global-nav a:hover {
+  color: #1ABC9C; /* Grün bei Hover */
+}
+
+/* Hauptinhalt */
+main {
+  display: flex;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto; /* Zentriert die Seite */
+}
+
+/* Lokale Navigation */
+.local-nav {
+  width: 200px; /* Feste Breite für das Menü */
+}
+
+.local-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.local-nav a {
+  text-decoration: none;
+  color: #2C3E50;
+  display: block; /* Links füllen die Breite aus */
+  padding: 0.5rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.local-nav a:hover {
+  background: #1ABC9C;
+  color: white;
+}
+
+/* Inhaltsbereich */
+#content {
+  flex: 1; /* Nimmt den restlichen Platz ein */
+  padding-left: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  padding: 1rem;
+}
+
+/* Tabelle */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+table th {
+  background: #2C3E50;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #34495E;
+  color: white;
+}
+/* Filtereingabefeld */
+#filter-input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Tabellenkopf klickbar machen */
+th {
+  cursor: pointer;
+  background: #2C3E50;
+  color: white;
+}
+
+th:hover {
+  background: #1ABC9C;
+}
+/* Lokales Menü */
+.local-nav {
+  position: relative;
+  padding: 1rem;
+  width: 200px;
+  background: #2C3E50;
+  color: white;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.local-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.local-nav a {
+  display: block;
+  padding: 0.5rem;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.local-nav a:hover {
+  background: #1ABC9C;
+  color: white;
+}
+
+/* Links oder rechts ausrichten */
+.local-nav-left {
+  float: left;
+  margin-right: 1rem;
+}
+
+.local-nav-right {
+  float: right;
+  margin-left: 1rem;
+}

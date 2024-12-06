@@ -1,0 +1,9 @@
+[
+    { "country": "USA", "company": "Kohlekraft", "emissions": 500 },
+    { "country": "Germany", "company": "Kernenergie", "emissions": 300 },
+    { "country": "China", "company": "Wasserkraft", "emissions": 800 },
+    { "country": "India", "company": "Windkraft", "emissions": 400 },
+    { "country": "USA", "company": "Solarzelle", "emissions": 200 },
+    { "country": "Germany", "company": "Antimaterie", "emissions": 250 }
+  ]
+  
