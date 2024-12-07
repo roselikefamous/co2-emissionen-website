@@ -62,3 +62,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+// Eingabebereinigung
+function sanitizeInput(input) {
+  const div = document.createElement('div');
+  div.innerText = input;
+  return div.innerHTML; // Entfernt gefährliche Zeichen wie <, >, &, "
+}
+
+// Formular validieren
+document.querySelector("form").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const name = sanitizeInput(document.getElementById("name").value);
+  const email = sanitizeInput(document.getElementById("email").value);
+  const message = sanitizeInput(document.getElementById("message").value);
+
+  // Daten sicher weiterverarbeiten
+  console.log({ name, email, message });
+});
