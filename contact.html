@@ -9,46 +9,73 @@
 <body>
   <!-- Header -->
   <header>
-    <img src="./assets/Pic.png" alt="Logo" class="logo">
+    <img src="assets/Pic.png" alt="Logo" class="logo">
     <nav class="global-nav">
-        <ul>
-            <li><a href="/index.html">Startseite</a></li>
-            <li><a href="/about.html">Über uns</a></li>
-            <li><a href="/contact.html">Kontakt</a></li>
-          </ul>
+      <ul>
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="about.html">Über uns</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+      </ul>
     </nav>
   </header>
 
   <!-- Hauptinhalt -->
   <main>
-    <h1>Kontakt</h1>
-    <p>Wir freuen uns auf Ihre Nachricht! Sie können uns über die folgenden Wege kontaktieren:</p>
+    <section>
+      <h1>Kontakt</h1>
+      <p>Wir freuen uns auf Ihre Nachricht! Sie können uns über die folgenden Wege kontaktieren:</p>
+    </section>
 
-    <h2>Kontaktinformationen</h2>
-    <ul>
-      <li>Email: <a href="mailto:info@co2tracker.org">info@co2tracker.org</a></li>
-      <li>Telefon: +49 123 456 7890</li>
-      <li>Adresse: Umweltstraße 42, 10115 Berlin, Deutschland</li>
-    </ul>
+    <section>
+      <h2>Kontaktinformationen</h2>
+      <ul>
+        <li>Email: <a href="mailto:info@co2tracker.org">info@co2tracker.org</a></li>
+        <li>Telefon: +49 123 456 7890</li>
+        <li>Adresse: Umweltstraße 42, 10115 Berlin, Deutschland</li>
+      </ul>
+    </section>
 
-    <h2>Kontaktformular</h2>
-    <form action="#" method="post">
-      <label for="name">Ihr Name:</label><br>
-      <input type="text" id="name" name="name" required><br><br>
+    <section>
+      <h2>Kontaktformular</h2>
+      <form id="contactForm">
+        <label for="name">Ihr Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
 
-      <label for="email">Ihre Email:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
+        <label for="email">Ihre Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
 
-      <label for="message">Ihre Nachricht:</label><br>
-      <textarea id="message" name="message" rows="5" required></textarea><br><br>
+        <label for="message">Ihre Nachricht:</label><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br><br>
 
-      <button type="submit">Nachricht senden</button>
-    </form>
+        <button type="submit">Nachricht senden</button>
+      </form>
+    </section>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 CO2 Emission Tracker | <a href="/impressum.html">Impressum</a></p>
+    <p>&copy; 2024 CO2 Emission Tracker | <a href="impressum.html">Impressum</a></p>
   </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault(); // Verhindert das Neuladen der Seite
+
+      // Optional: Formulardaten abrufen (kann später genutzt werden)
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      // Überprüfung, ob die Felder ausgefüllt sind
+      if (name && email && message) {
+        // Weiterleitung zur Erfolgsseite
+        window.location.href = "success.html";
+      } else {
+        alert("Bitte füllen Sie alle Felder aus."); // Fehlernachricht bei fehlenden Eingaben
+      }
+    });
+  </script>
 </body>
 </html>
