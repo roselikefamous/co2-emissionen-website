@@ -1,5 +1,5 @@
 
-# CO2 Emission Tracker
+# CO2 Emission Tracker für das Modul IPWA01-01 Aufgabe: CO2-Footprint
 
 ## Projektbeschreibung
 Diese Webanwendung zeigt CO2-Emissionsdaten von Ländern und Unternehmen. Sie soll Transparenz über die größten Emittenten weltweit schaffen.
