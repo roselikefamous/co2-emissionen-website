@@ -61,21 +61,29 @@
   <!-- JavaScript -->
   <script>
     document.getElementById("contactForm").addEventListener("submit", function (event) {
-      event.preventDefault(); // Verhindert das Neuladen der Seite
+  event.preventDefault(); // Verhindert das Neuladen der Seite
 
-      // Optional: Formulardaten abrufen (kann später genutzt werden)
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
+  // Funktion zum Escapen von Eingaben
+  function escapeHTML(string) {
+    const div = document.createElement("div");
+    div.textContent = string;
+    return div.innerHTML;
+  }
 
-      // Überprüfung, ob die Felder ausgefüllt sind
-      if (name && email && message) {
-        // Weiterleitung zur Erfolgsseite
-        window.location.href = "success.html";
-      } else {
-        alert("Bitte füllen Sie alle Felder aus."); // Fehlernachricht bei fehlenden Eingaben
-      }
-    });
+  // Eingaben validieren und escapen
+  const name = escapeHTML(document.getElementById("name").value);
+  const email = escapeHTML(document.getElementById("email").value);
+  const message = escapeHTML(document.getElementById("message").value);
+
+  // Überprüfung, ob die Felder ausgefüllt sind
+  if (name && email && message) {
+    console.log("Eingaben gesichert:", { name, email, message });
+    // Weiterleitung zur Erfolgsseite
+    window.location.href = "success.html";
+  } else {
+    alert("Bitte füllen Sie alle Felder aus."); // Fehlernachricht bei fehlenden Eingaben
+  }
+});
   </script>
 </body>
 </html>

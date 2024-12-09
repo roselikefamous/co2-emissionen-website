@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Ermittelt die Sprache und setzt das `dir`-Attribut dynamisch
+    document.addEventListener("DOMContentLoaded", function () {
+      const html = document.documentElement;
+      const rtlLanguages = ["ar", "he", "fa", "ur"]; // Sprachen mit RTL-Schriftkultur
+      const userLang = navigator.language || navigator.userLanguage; // Ermittelt die Sprache des Browsers
+      if (rtlLanguages.some((lang) => userLang.startsWith(lang))) {
+        html.setAttribute("dir", "rtl"); // Setzt die Textausrichtung auf RTL
+      } else {
+        html.setAttribute("dir", "ltr"); // Standard: LTR
+      }
+    });
+  </script>
   <title>CO2 Emission Tracker</title>
   <link rel="stylesheet" href="styles/main.css">
   <link rel="icon" href="assets/favicon.ico">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';">
 </head>
 <body>
   <!-- Header -->

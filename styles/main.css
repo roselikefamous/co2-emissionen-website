@@ -276,3 +276,17 @@ input:valid, textarea:valid {
 .button:hover {
   background: #1ABC9C;
 }
+/* Standard LTR-Ausrichtung */
+.global-nav ul {
+  justify-content: flex-start; /* Links ausgerichtet für LTR */
+}
+
+/* RTL-Ausrichtung */
+:root[dir="rtl"] .global-nav ul {
+  justify-content: flex-end; /* Rechts ausgerichtet für RTL */
+}
+
+/* Lokale Navigation für RTL */
+:root[dir="rtl"] .local-nav {
+  text-align: right; /* Text rechtsbündig */
+}

@@ -80,3 +80,11 @@ document.querySelector("form").addEventListener("submit", (e) => {
   // Daten sicher weiterverarbeiten
   console.log({ name, email, message });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const html = document.documentElement;
+  const nav = document.querySelector(".global-nav ul");
+
+  if (html.getAttribute("dir") === "rtl") {
+    nav.style.flexDirection = "row-reverse"; // Links-nach-Rechts Reihenfolge umkehren
+  }
+});
