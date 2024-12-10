@@ -4,77 +4,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
-    // Ermittelt die Sprache und setzt das `dir`-Attribut dynamisch
+    // Dynamisches Setzen des `dir`-Attributs basierend auf der Sprache
     document.addEventListener("DOMContentLoaded", function () {
       const html = document.documentElement;
       const rtlLanguages = ["ar", "he", "fa", "ur"]; // Sprachen mit RTL-Schriftkultur
-      const userLang = navigator.language || navigator.userLanguage; // Ermittelt die Sprache des Browsers
+      const userLang = navigator.language || navigator.userLanguage; // Sprache des Browsers
       if (rtlLanguages.some((lang) => userLang.startsWith(lang))) {
-        html.setAttribute("dir", "rtl"); // Setzt die Textausrichtung auf RTL
+        html.setAttribute("dir", "rtl"); // RTL setzen
       } else {
         html.setAttribute("dir", "ltr"); // Standard: LTR
       }
     });
   </script>
   <title>CO2 Emission Tracker</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="icon" href="assets/favicon.ico">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';">
 </head>
 <body>
   <!-- Header -->
-  <header>
-    <img src="./assets/Pic.png" alt="Logo" class="logo">
-    <nav class="global-nav">
-      <ul>
-        <li><a href="/index.html">Startseite</a></li>
-        <li><a href="/about.html">Über uns</a></li>
-        <li><a href="/contact.html">Kontakt</a></li>
-      </ul>
-    </nav>
+  <header class="bg-light py-3 mb-4 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+        <img src="./assets/Pic.png" alt="Logo" class="logo" style="height: 40px;">
+      </a>
+      <nav class="nav">
+        <a href="/index.html" class="nav-link px-2 text-dark">Startseite</a>
+        <a href="/about.html" class="nav-link px-2 text-dark">Über uns</a>
+        <a href="/contact.html" class="nav-link px-2 text-dark">Kontakt</a>
+      </nav>
+    </div>
   </header>
 
   <!-- Hauptinhalt -->
-  <main>
-    <!-- Lokale Navigation -->
-    <aside class="local-nav">
-      <ul>
-        <li><button id="sort-country">Emissionen nach Ländern sortieren</button></li>
-        <li><button id="sort-company">Emissionen nach Unternehmen sortieren</button></li>
-      </ul>
-    </aside>
+  <main class="container">
+    <div class="row">
+      <!-- Lokale Navigation -->
+      <aside class="col-md-3 mb-3">
+        <div class="list-group">
+          <button id="sort-country" class="list-group-item list-group-item-action">Emissionen nach Ländern sortieren</button>
+          <button id="sort-company" class="list-group-item list-group-item-action">Emissionen nach Unternehmen sortieren</button>
+        </div>
+      </aside>
 
-    <!-- Inhaltsbereich -->
-    <section id="content">
-      <h1>CO2 Emission Tracker</h1>
-      <p>Diese Webseite bietet Transparenz über die CO2-Emissionen weltweit.</p>
+      <!-- Inhaltsbereich -->
+      <section id="content" class="col-md-9">
+        <h1 class="mb-4">CO2 Emission Tracker</h1>
+        <p>Diese Webseite bietet Transparenz über die CO2-Emissionen weltweit.</p>
 
-      <!-- Filter-Eingabe -->
-      <label for="filter-input">Filter:</label>
-      <input type="text" id="filter-input" placeholder="Nach Land oder Unternehmen filtern...">
+        <!-- Filter-Eingabe -->
+        <div class="mb-3">
+          <label for="filter-input" class="form-label">Filter:</label>
+          <input type="text" id="filter-input" class="form-control" placeholder="Nach Land oder Unternehmen filtern...">
+        </div>
 
-      <!-- Tabelle -->
-      <table id="emissions-table">
-        <thead>
-          <tr>
-            <th>Land</th>
-            <th>Unternehmen</th>
-            <th>CO2-Emissionen (in Mt)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Dynamischer Inhalt wird hier eingefügt -->
-        </tbody>
-      </table>
-    </section>
+        <!-- Tabelle -->
+        <table id="emissions-table" class="table table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>Land</th>
+              <th>Unternehmen</th>
+              <th>CO2-Emissionen (in Mt)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Dynamischer Inhalt wird hier eingefügt -->
+          </tbody>
+        </table>
+      </section>
+    </div>
   </main>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 CO2 Emission Tracker | <a href="/impressum.html">Impressum</a></p>
+  <footer class="bg-dark text-white py-3 mt-4">
+    <div class="container text-center">
+      <p>&copy; 2024 CO2 Emission Tracker | <a href="/impressum.html" class="text-decoration-none text-white">Impressum</a></p>
+    </div>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="scripts/app.js"></script>
 </body>
 </html>

@@ -1,70 +1,92 @@
 /* Basisstile */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
   background-color: #f5f5f5; /* Heller Hintergrund */
   color: #333; /* Standardtextfarbe */
-}
-
-h1, h2, h3 {
-  margin: 0;
-  color: #2C3E50; /* Dunkles Blau */
-}
-
-p {
-  margin: 0 0 1rem;
+  font-family: Arial, sans-serif;
 }
 
 /* Header */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
   background: #2C3E50;
   color: white;
 }
 
-.logo {
-  max-width: 120px; /* Kleinere maximale Breite */
+header .logo {
+  max-width: 120px; /* Maximale Breite */
   height: auto; /* Proportionale Höhe */
 }
 
-/* Navigation */
-.global-nav ul {
-  display: flex;
-  list-style: none; /* Keine Aufzählungszeichen */
-  margin: 0;
-  padding: 0;
-  gap: 1rem; /* Abstand zwischen den Links */
-}
-
-.global-nav a {
+header .nav-link {
   color: white;
-  text-decoration: none;
   transition: color 0.3s;
 }
 
-.global-nav a:hover {
-  color: #1ABC9C; /* Grün bei Hover */
+header .nav-link:hover {
+  color: #1ABC9C;
 }
 
 /* Hauptinhalt */
 main {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 1rem;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin: 2rem auto;
+}
+
+/* Erfolgsmeldung */
+.success-message {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 600px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.success-message h1 {
+  color: #2C3E50;
+  margin-bottom: 1rem;
+}
+
+.success-message p {
+  margin: 1rem 0 2rem;
+  font-size: 1.1rem;
+}
+
+/* Buttons */
+.button {
+  background: #2C3E50;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 0.8rem 1.5rem;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #1ABC9C;
+}
+
+/* Tabellenstile */
+table th, table td {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+table th {
+  background: #2C3E50;
+  color: white;
+}
+
+table th:hover {
+  background: #1ABC9C;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 1rem;
   background: #34495E;
   color: white;
 }
@@ -78,215 +100,15 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Lokale Navigation */
-.local-nav {
-  position: relative;
-  padding: 1rem;
-  width: 200px; /* Feste Breite */
-  background: #2C3E50;
-  color: white;
-  border-radius: 8px;
-}
-
-.local-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.local-nav a {
-  display: block;
-  padding: 0.5rem;
-  color: white;
-  text-decoration: none;
-  transition: background 0.3s, color 0.3s;
-}
-
-.local-nav a:hover {
-  background: #1ABC9C;
-}
-
-/* Tabellenstile */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-table th, table td {
-  border: 1px solid #ccc;
-  padding: 0.5rem;
-  text-align: left;
-}
-
-table th {
-  background: #2C3E50;
-  color: white;
-  cursor: pointer; /* Klickbare Spalten */
-}
-
-table th:hover {
-  background: #1ABC9C;
-}
-
-table tr:nth-child(even) {
-  background: #f9f9f9;
-}
-
-/* Eingabefeld (Filter) */
-#filter-input {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
 /* Responsive Design */
-
-/* Tablet (maximal 768px) */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .global-nav ul {
-    flex-direction: column;
-    gap: 0.5rem; /* Weniger Abstand */
-  }
-
-  main {
-    padding: 1rem;
-  }
-
   .logo {
     max-width: 100px; /* Kleinere Größe auf Tablets */
   }
-
-  footer {
-    font-size: 0.9rem;
-  }
 }
 
-/* Smartphone (maximal 480px) */
 @media (max-width: 480px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .global-nav ul {
-    flex-direction: column;
-    text-align: center;
-  }
-
   .logo {
     max-width: 80px; /* Noch kleinere Größe auf Smartphones */
-    height: auto;
   }
-
-  main {
-    padding: 0.5rem;
-  }
-
-  footer {
-    font-size: 0.8rem;
-    padding: 0.5rem;
-  }
-}
-
-/* Fehlermeldungen für Eingabefelder */
-input:invalid, textarea:invalid {
-  border: 1px solid red;
-}
-
-input:valid, textarea:valid {
-  border: 1px solid green;
-}
-/* Erfolgsmeldung */
-.success-message {
-  text-align: center;
-  margin: 2rem auto;
-  padding: 2rem;
-  max-width: 600px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.success-message h1 {
-  color: #2C3E50;
-}
-
-.success-message p {
-  margin: 1rem 0 2rem;
-  font-size: 1.1rem;
-}
-
-/* Button für die Erfolgsmeldung */
-.success-message .button {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  color: white;
-  background: #2C3E50;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background 0.3s;
-}
-
-.success-message .button:hover {
-  background: #1ABC9C;
-}
-/* Erfolgsmeldung */
-.success-message {
-  text-align: center;
-  margin: 2rem auto;
-  padding: 2rem;
-  max-width: 600px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.success-message h1 {
-  color: #2C3E50;
-  margin-bottom: 1rem;
-}
-
-.success-message p {
-  margin: 1rem 0 2rem;
-  font-size: 1.1rem;
-}
-
-/* Button-Stile */
-.button {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  color: white;
-  background: #2C3E50;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background 0.3s;
-}
-
-.button:hover {
-  background: #1ABC9C;
-}
-/* Standard LTR-Ausrichtung */
-.global-nav ul {
-  justify-content: flex-start; /* Links ausgerichtet für LTR */
-}
-
-/* RTL-Ausrichtung */
-:root[dir="rtl"] .global-nav ul {
-  justify-content: flex-end; /* Rechts ausgerichtet für RTL */
-}
-
-/* Lokale Navigation für RTL */
-:root[dir="rtl"] .local-nav {
-  text-align: right; /* Text rechtsbündig */
 }

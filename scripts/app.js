@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Seite geladen. JavaScript wird ausgeführt...");
-  
 
   const tableBody = document.querySelector("#emissions-table tbody");
   const filterInput = document.querySelector("#filter-input");
@@ -53,21 +52,24 @@ document.addEventListener("DOMContentLoaded", () => {
     tableBody.innerHTML = "";
     data.forEach((item) => {
       const row = document.createElement("tr");
+      row.classList.add("table-light"); // Bootstrap-Klasse für Tabelle
+
       row.innerHTML = `
-        <td>${item.country}</td>
-        <td>${item.company}</td>
-        <td>${item.emissions}</td>
+        <td>${sanitizeInput(item.country)}</td>
+        <td>${sanitizeInput(item.company)}</td>
+        <td>${sanitizeInput(item.emissions)}</td>
       `;
       tableBody.appendChild(row);
     });
   }
+
+  // Eingabebereinigung
+  function sanitizeInput(input) {
+    const div = document.createElement("div");
+    div.innerText = input;
+    return div.innerHTML; // Entfernt gefährliche Zeichen wie <, >, &, "
+  }
 });
-// Eingabebereinigung
-function sanitizeInput(input) {
-  const div = document.createElement('div');
-  div.innerText = input;
-  return div.innerHTML; // Entfernt gefährliche Zeichen wie <, >, &, "
-}
 
 // Formular validieren
 document.querySelector("form").addEventListener("submit", (e) => {
@@ -80,6 +82,8 @@ document.querySelector("form").addEventListener("submit", (e) => {
   // Daten sicher weiterverarbeiten
   console.log({ name, email, message });
 });
+
+// RTL-Unterstützung für Navigation
 document.addEventListener("DOMContentLoaded", function () {
   const html = document.documentElement;
   const nav = document.querySelector(".global-nav ul");
