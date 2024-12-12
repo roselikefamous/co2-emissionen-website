@@ -2,6 +2,7 @@
 const express = require("express");
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
+const path = require('path');
 
 const app = express();
 
@@ -21,7 +22,13 @@ app.post("/submit", (req, res) => {
   // Erfolgsnachricht zurückgeben
   res.json({ success: true, message: "Daten sicher empfangen" });
 });
+// Statische Dateien bereitstellen
+app.use(express.static(path.join(__dirname)));
 
+// Standard-Route für die index.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 // Server starten
 const PORT = 3000;
 app.listen(PORT, () => {
